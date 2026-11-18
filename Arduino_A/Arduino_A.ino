@@ -27,7 +27,7 @@
   Keypad: digits = password, * = clear while typing,
           * or # = close the door (readings stay on the LCD).
 */
-
+#include "DoorSystem.h"
 #include <Wire.h>
 #include <Servo.h>
 #include <Keypad.h>
@@ -347,8 +347,7 @@ void setup() {
   lcd.setCursor(0, 1);
   lcd.print("Starting...");
 
-  doorServo.attach(SERVO_PIN);
-  doorServo.write(0);
+initDoor();
 
   windowIn.begin();
   armIn.begin();
